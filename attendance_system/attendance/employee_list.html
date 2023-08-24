@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Employee List{% endblock %}
+
+
+{% block content %}
+<h1>Employee List</h1>
+<form method="get">
+    {{ filter.form|crispy }}
+    <button type="submit">Filter</button>
+</form>
+<ul>
+{% for employee in filter.qs %}
+    <li>{{ employee.name }}</li>
+{% empty %}
+    <li>No employees found.</li>
+{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Attendance System{% endblock %}</title>
+    {% crispy_forms_stylesheet %}
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'employee_list' %}">Employees</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    {% crispy_forms_javascript %}
+</body>
+</html>

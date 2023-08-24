@@ -1,0 +1,82 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "Face recognition attendance sysem",
+  "steps": [
+    {
+      "file": "README.md",
+      "description": "Always start with creating readme.md file that way it will assist the users to know whats the project all about and how to run it",
+      "line": 2
+    },
+    {
+      "file": "attendance_system/manage.py",
+      "description": "open your directory goto the terminal root, in this case is `attendance_system` run the following cmd to confirm everything works fine before editing\r\n```python\r\npython manage.py migrate\r\n```\r\nthen after\r\n```python\r\npython manage.py runserver\r\n```",
+      "line": 22
+    },
+    {
+      "file": "attendance_system/attendance_system/settings.py",
+      "description": "before you perform migrations make sure to add the app here, very important",
+      "line": 39
+    },
+    {
+      "file": "attendance_system/attendance/models.py",
+      "description": "open models.py under `attendance` app.\r\ndefine a new model called `Employee` by subclassing `models.Model`\r\nafter run the following on the terminal\r\n```pwsh\r\npython manage.py makemigrations\r\n```\r\nyou should see an output like this\r\n```pwsh\r\nMigrations for 'attendance':\r\n  attendance\\migrations\\0001_initial.py\r\n    - Create model Employee\r\n```\r\n```python\r\npython manage.py\r\n```\r\noutput will look like this\r\n```pwsh\r\nOperations to perform:\r\n  Apply all migrations: admin, attendance, auth, contenttypes, sessions\r\nRunning migrations:\r\n  Applying attendance.0001_initial... OK\r\n```\r\nthis will create a new migration file for `attendance` app and apply changes to the database\r\nfrom there you can run the server\r\n```python\r\npython manage.py runserver\r\n```\r\nyou can now use the `Employee` model to create,read,update, and delete employee recors in your Django application",
+      "line": 4
+    },
+    {
+      "file": "attendance_system/attendance/views.py",
+      "description": "This is part is where you create django view for the employee model",
+      "line": 4
+    },
+    {
+      "file": "attendance_system/attendance/views.py",
+      "description": "Do note that you must create a new template called `employee_list.html` in `attendance ` directory",
+      "line": 6
+    },
+    {
+      "file": "attendance_system/attendance/employee_list.html",
+      "description": "this is where you create an `employee_list.html` feel free to customize it",
+      "line": 1
+    },
+    {
+      "file": "attendance_system/attendance/employee_list.html",
+      "description": "do note that you also have to create base.html but we will come back to that.\r\nnow head over to attendance directory and create a file `urls.py` do not touch `urls.py` in root directory yet",
+      "line": 2
+    },
+    {
+      "file": "attendance_system/attendance/urls.py",
+      "description": "this is where you add the urls pattern for employee_list view in the urls.py fule of your `attendance` app",
+      "line": 1
+    },
+    {
+      "file": "attendance_system/attendance/urls.py",
+      "description": "now create `base.html`",
+      "line": 6
+    },
+    {
+      "file": "attendance_system/attendance/views.py",
+      "description": "create django-filter file and call it filter.spy",
+      "line": 10
+    },
+    {
+      "file": "attendance_system/attendance/employee_list.html",
+      "description": "make sure you use django-crispy-forms in your templates",
+      "line": 2
+    },
+    {
+      "file": "attendance_system/attendance/base.html",
+      "description": "same applies to your base.html make sure you have this kind of content",
+      "line": 1
+    },
+    {
+      "file": "attendance_system/attendance_system/settings.py",
+      "description": "please make sure to add this",
+      "line": 44
+    },
+    {
+      "file": "attendance_system/setup.py",
+      "description": "create setup.py file in the root directory of your project \r\nthis is where they will install all the required files before running the project\r\nthis will make the project more accessible",
+      "line": 1
+    }
+  ],
+  "ref": "main"
+}
